@@ -81,11 +81,13 @@ select {
 
 .search{
     
+    height: 15vh;
     padding: 20px;
     display: flex;
     justify-content: center;
     
     .search-box {
+    height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,8 +119,45 @@ select {
         }
     }
 
+    
+
     svg {
         
+    }
+
+}
+
+
+
+.main{
+
+  display: grid;
+  place-content: center;
+  height: 85vh;
+
+    .main-container {
+      display: grid;
+      place-content: center;
+      height: 550px;
+      width: 500px;
+      padding: 20px;
+      border-radius: 15px;
+      border: 2px grey solid;
+    }
+
+    .location {
+      border-radius: 15px;
+      height: 50px;
+      width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .city {
+        font-weight: 900;
+      }
+
     }
 
 }
