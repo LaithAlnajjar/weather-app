@@ -73,9 +73,9 @@ const displayTemp = function (location) {
 //Function which displays what remains of the forecast on the interface
 const displayStats = function (location) {
   processWeatherJson(location).then(function (response) {
-    percip.textContent = response.precipiation;
-    humid.textContent = response.humidity;
-    speed.textContent = response.windSpeed;
+    percip.textContent = response.precipiation + " in";
+    humid.textContent = response.humidity + "%";
+    speed.textContent = response.windSpeed + " km/h";
   });
 };
 
