@@ -2,6 +2,11 @@ const searchBtn = document.querySelector(".search-icon-wrapper");
 const locationField = document.querySelector("input");
 const city = document.querySelector(".city");
 const country = document.querySelector(".country");
+const con = document.querySelector(".con-text");
+const temp = document.querySelector(".temp-text");
+const percip = document.querySelector(".percip-text");
+const humid = document.querySelector(".humidity-text");
+const speed = document.querySelector(".speed-text");
 
 //Function which hits the API and returns a json
 const getWeatherData = function (location) {
@@ -47,8 +52,31 @@ const displayWeather = function (location) {
 //Function which displays location on the interface
 const displayLoc = function (location) {
   processWeatherJson(location).then(function (response) {
-    city.textContent = response.name;
+    city.textContent = response.name + ",";
     country.textContent = response.country;
+  });
+};
+
+//Function which displays condition on the interface
+const displayCon = function (location) {
+  processWeatherJson(location).then(function (response) {
+    con.textContent = response.condition;
+  });
+};
+
+//Function which displays temprature on the interface
+const displayTemp = function (location) {
+  processWeatherJson(location).then(function (response) {
+    temp.textContent = response.temp;
+  });
+};
+
+//Function which displays what remains of the forecast on the interface
+const displayStats = function (location) {
+  processWeatherJson(location).then(function (response) {
+    percip.textContent = response.precipiation;
+    humid.textContent = response.humidity;
+    speed.textContent = response.windSpeed;
   });
 };
 
@@ -62,4 +90,7 @@ searchBtn.addEventListener("click", (e) => {
   let location = locationField.value;
   displayWeather(location);
   displayLoc(location);
+  displayCon(location);
+  displayTemp(location);
+  displayStats(location);
 });

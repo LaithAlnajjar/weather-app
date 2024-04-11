@@ -134,6 +134,7 @@ select {
   display: grid;
   place-content: center;
   height: 85vh;
+  
 
     .main-container {
       display: grid;
@@ -146,7 +147,6 @@ select {
     }
 
     .location {
-      border-radius: 15px;
       height: 50px;
       width: 250px;
       display: flex;
@@ -158,6 +158,11 @@ select {
         font-weight: 900;
       }
 
+    }
+
+    .con {
+      display: flex;
+      justify-content: center;
     }
 
 }
