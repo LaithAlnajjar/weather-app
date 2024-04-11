@@ -77,6 +77,16 @@ select {
 
 * {
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+   
+}
+
+body {
+  background-image: linear-gradient(to bottom, #000000, #181418, #20222c, #1e333f, #1b454a);
+}
+
+svg {
+  fill:white;
 }
 
 .search{
@@ -96,6 +106,7 @@ select {
     border-radius: 15px;
     padding: 10px;
 
+
     :focus {
         outline:none;
     }
@@ -106,6 +117,7 @@ select {
         display: grid;
         place-content: center;
         border:0;
+        background: none;
     }
 
     .search-icon-wrapper {
@@ -133,7 +145,7 @@ select {
 
   display: grid;
   place-content: center;
-  height: 85vh;
+  height: 70vh;
   
 
     .main-container {
@@ -143,7 +155,7 @@ select {
       width: 500px;
       padding: 20px;
       border-radius: 15px;
-      border: 2px grey solid;
+      //border: 2px grey solid;
     }
 
     .location {
@@ -153,6 +165,7 @@ select {
       justify-content: center;
       align-items: center;
       gap: 10px;
+      font-size: 2rem;
 
       .city {
         font-weight: 900;
@@ -163,6 +176,30 @@ select {
     .con {
       display: flex;
       justify-content: center;
+    }
+
+    .temp {
+      display: flex;
+      padding: 20px;
+      font-size: 5rem;
+      justify-content: center;
+      align-items: center;
+
+      .cel{
+        font-size: 1.75rem;
+        position: relative;
+        top: -20px;
+      }
+
+    }
+
+    .stats {
+      display: flex;
+      padding: 20px;
+      font-size: 1.5rem;
+      flex-direction: column;
+      gap: 10px;
+  
     }
 
 }

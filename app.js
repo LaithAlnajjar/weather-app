@@ -23,7 +23,6 @@ const getWeatherData = function (location) {
 //Function which returns an object containg wanted weather data
 const processWeatherJson = function (location) {
   return getWeatherData(location).then(function (response) {
-    console.log(response);
     return {
       name: response.location.name,
       country: response.location.country,
@@ -37,17 +36,17 @@ const processWeatherJson = function (location) {
 };
 
 //Function which displays recieved weather data in the console
-const displayWeather = function (location) {
-  processWeatherJson(location).then(function (response) {
-    console.log(response.name);
-    console.log(response.country);
-    console.log(response.condition);
-    console.log(response.temp);
-    console.log(response.precipiation);
-    console.log(response.windSpeed);
-    console.log(response.humidity);
-  });
-};
+// const displayWeather = function (location) {
+//   processWeatherJson(location).then(function (response) {
+//     console.log(response.name);
+//     console.log(response.country);
+//     console.log(response.condition);
+//     console.log(response.temp);
+//     console.log(response.precipiation);
+//     console.log(response.windSpeed);
+//     console.log(response.humidity);
+//   });
+// };
 
 //Function which displays location on the interface
 const displayLoc = function (location) {
@@ -80,15 +79,19 @@ const displayStats = function (location) {
   });
 };
 
-const getInput = function () {
-  input = prompt("Enter the location");
-  displayWeather(input);
-};
-
+//Event listener which calls all the functions upon clicking the search button
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let location = locationField.value;
-  displayWeather(location);
+  displayLoc(location);
+  displayCon(location);
+  displayTemp(location);
+  displayStats(location);
+});
+
+window.addEventListener("load", (e) => {
+  e.preventDefault();
+  let location = "Amman";
   displayLoc(location);
   displayCon(location);
   displayTemp(location);
